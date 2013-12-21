@@ -1,5 +1,9 @@
 Yeoman generator that scaffolds out a Zurb Foundation 5 web app.
 
+[![NPM](https://nodei.co/npm/generator-foundation-five.png?downloads=true)](https://nodei.co/npm/generator-foundation-five/)
+[![NPM version](https://badge.fury.io/js/generator-foundation-five.png)](http://badge.fury.io/js/generator-foundation-five)
+[![Dependency Status](https://david-dm.org/bauschan/generator-foundation-five.png)](https://david-dm.org/bauschan/generator-foundation-five)
+
 
 ## Before you begin
 
@@ -14,6 +18,8 @@ Yeoman generator that scaffolds out a Zurb Foundation 5 web app.
 - Create a new folder and cd into it: `mkdir foundation-project && cd $_`
 
 - Run `yo foundation-five`
+
+- Run `bower install`
 
 - Run `grunt` to build and `grunt serve` to preview
 
