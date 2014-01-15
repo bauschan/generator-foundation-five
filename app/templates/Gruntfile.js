@@ -191,15 +191,15 @@ module.exports = function (grunt) {
         cssmin: {
         },
         dalek: {
-          options: {
-               htmlReporter: true,
-               logLevel: 2,
-               noColors: false,
-               noSymbols: false
-             },
-             dist: {
-               src: ['uat/dalekjs-tests.js']
-             }
+            options: {
+                htmlReporter: true,
+                logLevel: 2,
+                noColors: false,
+                noSymbols: false
+            },
+            dist: {
+                src: ['uat/dalekjs-tests.js']
+            }
         },
         htmlmin: {
             dist: {
@@ -280,8 +280,8 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('server', function () {
-      grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-      grunt.task.run(['serve']);
+        grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
+        grunt.task.run(['serve']);
     });
 
     grunt.registerTask('test', [
