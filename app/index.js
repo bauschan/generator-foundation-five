@@ -1,8 +1,9 @@
 'use strict';
 var util = require('util');
 var path = require('path');
-var spawn = require('child_process').spawn;
 var yeoman = require('yeoman-generator');
+var yosay = require('yosay');
+var chalk = require('chalk');
 
 
 var AppGenerator = module.exports = function Appgenerator(args, options, config) {
@@ -20,15 +21,14 @@ var AppGenerator = module.exports = function Appgenerator(args, options, config)
 
   this.on('end', function () {
     this.installDependencies({
-      skipInstall: options['skip-install'],
-      skipMessage: options['skip-install-message']
+      skipInstall: options['skip-install']
     });
   });
 
-  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+  this.pkg = require('../package.json');
 };
 
-util.inherits(AppGenerator, yeoman.generators.Base);
+util.inherits(AppGenerator, yeoman.generators.NamedBase);
 
 
 AppGenerator.prototype.gruntfile = function gruntfile() {
@@ -64,7 +64,6 @@ AppGenerator.prototype.uat = function uat() {
 
 
 AppGenerator.prototype.writeIndex = function writeIndex() {
-
   this.indexFile = this.readFileAsString(path.join(this.sourceRoot(), 'index.html'));
   this.indexFile = this.engine(this.indexFile, this);
 };
@@ -73,3 +72,4 @@ AppGenerator.prototype.app = function app() {
   this.directory('app', 'app', true);
   this.write('app/index.html', this.indexFile);
 };
+
